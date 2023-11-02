@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="827a4bec8aeb4c5481577b98bb0b72da" Name="Diagram1">
+        <EntityTypeShape EntityType="TestingSystemModel.admin" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.answerOption" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.assignedTest" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.group" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.groupSubject" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.headTeacher" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.question" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.student" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.subject" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.teacher" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.teacherSubject" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.test" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestingSystemModel.testResult" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <AssociationConnector Association="TestingSystemModel.FK__answerOpt__quest__30592A6F" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__assignedT__assig__26CFC035" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__assignedT__assig__27C3E46E" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__assignedT__testI__25DB9BFC" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__groupSubj__group__1F2E9E6D" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__student__groupId__1B5E0D89" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__groupSubj__subje__1E3A7A34" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__question__testId__2D7CBDC4" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__teacherSu__subje__1699586C" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__test__subjectId__22FF2F51" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__teacherSu__teach__15A53433" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__test__createdBy__220B0B18" ManuallyRouted="false" />
+        <AssociationConnector Association="TestingSystemModel.FK__testResul__assig__2AA05119" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
