@@ -21,47 +21,34 @@ namespace School1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly SchoolLibrary.TestingSystemEntities connection;
-        public ObservableCollection<SchoolLibrary.student> Students { get; set; }
-        public ObservableCollection<SchoolLibrary.group> Groups { get; set; }
-
+        public static SchoolLibrary.TestingSystemEntities connection;
+       
+        public static Frame page;
 
         public MainWindow()
         {
+           
             InitializeComponent();
-
+            
             connection = new SchoolLibrary.TestingSystemEntities();
             if (connection.Database.Exists() == false) { 
             MessageBox.Show("Подключение к базе данных не было выполнено. Приложение будет завершено", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 Application.Current.Shutdown();
             }
-            Students = new ObservableCollection<SchoolLibrary.student>(connection.students);
-            Groups = new ObservableCollection<SchoolLibrary.group>(connection.groups);
+           
             DataContext = this;
-            
-        
-        }
-
-        private void AddStudent(object sender, RoutedEventArgs e)
-        {
-            var idStudent = int.Parse(tbIDStudent.Text.Trim());
-            var fullName = tbFullName.Text.Trim();
-            var password = tbPassword.Text.Trim();
-            var GroupID = (cbGroup.SelectedItem as SchoolLibrary.group).id;
-
-            var student1 = new SchoolLibrary.student()
+            page = Authorization;
+            if(connection.admins.Count() == 0) 
             {
-                id = idStudent,
-                username = fullName,
-                password = password,
-               groupId = GroupID,
+                page.Navigate(Class1.reg);
+            }
+            else
+            {
+                page.Navigate(Class1.autho);
+            }
+            
 
-            } ;
-            connection.students.Add(student1);
-            connection.SaveChanges();
-
-            Students.Add(student1);
-             
         }
+    
     }
 }
