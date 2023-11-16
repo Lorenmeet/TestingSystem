@@ -27,7 +27,43 @@ namespace School1
             get
             {
               _autho = new Page3();
-                return _autho;
+               return _autho;
+            }
+        }
+        public static ManagmentTeacher _managmentTeacher;
+        public static ManagmentTeacher managmentTeacher
+        {
+            get
+            {
+                _managmentTeacher = new ManagmentTeacher();
+                return _managmentTeacher;
+            }
+        }
+        public static ManagmentClass _managmentClass;
+        public static ManagmentClass managmentClass
+        {
+            get
+            {
+                _managmentClass = new ManagmentClass();
+                return _managmentClass;
+            }
+        }
+        public static ManagmentStudent _managmentStudent;
+        public static ManagmentStudent managmentStudent
+        {
+            get
+            {
+                _managmentStudent = new ManagmentStudent();
+                return _managmentStudent;
+            }
+        }
+        public static ManagmentSubject _managmentSubject;
+        public static ManagmentSubject managmentSubject
+        {
+            get
+            {
+                _managmentSubject = new ManagmentSubject();
+                return _managmentSubject;
             }
         }
 
@@ -42,7 +78,35 @@ namespace School1
                 return _mainWindow;
             }
         }
-    
+
+        private static adminPage _admin;
+        public static adminPage admin
+        {
+            get
+            {
+                _admin= new adminPage();
+                return _admin;
+            }
+        }
+        private static HeadTeacher _headTeacher;
+        public static HeadTeacher headTeacher
+        {
+            get 
+            {
+                _headTeacher = new HeadTeacher();
+                return _headTeacher;
+            }
+        }
+        private static Teacher _teacher;
+        public static Teacher teacher
+        {
+            get
+            {
+                _teacher = new Teacher();
+                return _teacher;
+            }
+        }
+
 
     }
 }

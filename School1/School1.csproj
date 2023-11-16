@@ -64,10 +64,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="adminPage.xaml.cs">
+      <DependentUpon>adminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="HeadTeacher.xaml.cs">
+      <DependentUpon>HeadTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentClass.xaml.cs">
+      <DependentUpon>ManagmentClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentStudent.xaml.cs">
+      <DependentUpon>ManagmentStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentSubject.xaml.cs">
+      <DependentUpon>ManagmentSubject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentTeacher.xaml.cs">
+      <DependentUpon>ManagmentTeacher.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Teacher.xaml.cs">
+      <DependentUpon>Teacher.xaml</DependentUpon>
+    </Compile>
+    <Page Include="adminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HeadTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +109,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagmentClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagmentStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagmentSubject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagmentTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teacher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
