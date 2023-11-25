@@ -7,8 +7,39 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ManagmentTeacher">
+    <Grid  Background="#FFD8BAEA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-    <Grid>
-        <Button Click="Button_Click" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20" Height="30" Width="100">Выйти</Button>
+        <TextBlock HorizontalAlignment="Center" FontSize="20"  Grid.Row="0" >Учителя</TextBlock>
+        <ListView Grid.Column="0" Grid.Row="1" Background="#FFD8BAEA"   Name="teacherList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="20">
+                       <Run Text="{Binding userName}"></Run>
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock FontSize="16" Margin="10,10,10,0">ID</TextBlock>
+            <TextBox Name="idTeaher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,0,10,0">Имя</TextBlock>
+            <TextBox Name="tbName" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,0,10,0">Пароль</TextBlock>
+            <TextBox Name="tbPassword" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button  Click="AddTeacher" Background="Lavender" Height="30" Margin="10,200,10,10" >Добавить учителя</Button>
+            <Button Click="DeleteTeacher" Background="Lavender" Height="30" Margin="10,10,10,10" >Удалить учителя</Button>
+        </StackPanel>
+        <Button Click="Button_Click"  Background="Lavender" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="30" Width="100">Выйти</Button>
     </Grid>
 </Page>

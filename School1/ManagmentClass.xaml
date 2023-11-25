@@ -39,6 +39,6 @@
             <Button  Click="AddClass" Background="Lavender" Height="30" Margin="10,200,10,10" >Добавить класс</Button>
             <Button Click="DeleteClass" Background="Lavender" Height="30" Margin="10,10,10,10" >Удалить класс</Button>
         </StackPanel>
-        <Button Click="Button_Click" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="30" Width="100">Выйти</Button>
+        <Button Click="Button_Click"  Background="Lavender" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="30" Width="100">Выйти</Button>
     </Grid>
 </Page>

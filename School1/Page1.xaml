@@ -30,7 +30,7 @@
         <TextBox Name="FIO" VerticalAlignment="Top" Width="290" Height="40" Grid.Row="2" Grid.Column="1" Margin="50,50,50,0" ></TextBox>
         <TextBlock VerticalAlignment="Top" Width="290" Height="30" Grid.Row="3" Grid.Column="1" FontSize="20" Margin="50,10,50,0" >Пароль</TextBlock>
         <TextBox Name="Password" VerticalAlignment="Top" Width="290" Height="40" Grid.Row="3" Grid.Column="1" Margin="50,50,50,0" />
-        <Button Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="300" Height="40" Grid.Column="1" Grid.Row="4" Background="#FFB8CFF5">Зарегистрироваться</Button>
+        <Button Click="Button_Click"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="300" Height="40" Grid.Column="1" Grid.Row="4" Background="Lavender">Зарегистрироваться</Button>
        
     </Grid>
 </Page>

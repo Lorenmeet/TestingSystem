@@ -26,8 +26,8 @@
         <TextBox Name="FIO" VerticalAlignment="Bottom" Width="290" Height="40" Grid.Row="1" Grid.Column="1" Margin="50,0,50,10" ></TextBox>
         <TextBlock VerticalAlignment="Top" Width="290" Height="30" Grid.Column="1" FontSize="20" Margin="55,15,55,0" Grid.Row="2" >Пароль</TextBlock>
         <TextBox Name="Password" VerticalAlignment="Top" Width="290" Height="40" Grid.Row="2" Grid.Column="1" Margin="50,50,50,0" ></TextBox>
-     
-        <Button Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="300" Height="40" Grid.Column="1" Grid.Row="4" Background="#FFB8CFF5">Войти</Button>
+
+        <Button Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="300" Height="40" Grid.Column="1" Grid.Row="4" Background="Lavender">Войти</Button>
 
     </Grid>
 </Page>
