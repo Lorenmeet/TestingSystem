@@ -1,4 +1,5 @@
-﻿using SchoolLibrary;
+﻿using ClassLibrarySchool;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,16 +24,16 @@ namespace School1
     /// </summary>
     public partial class ManagmentStudent : Page
     {
-        public ObservableCollection<student> Students { get; set; }
-        public ObservableCollection<group> Groups { get; set; }
+        public ObservableCollection<Student> Students { get; set; }
+        public ObservableCollection<Class> Classes { get; set; }
         public ManagmentStudent()
         {
             InitializeComponent();
             Binding bindingCb = new Binding();
             Binding bindingList = new Binding();
-            Students = new ObservableCollection<student>(MainWindow.connection.students);
-            Groups = new ObservableCollection<group>(MainWindow.connection.groups);
-            bindingCb.Source = Groups;
+            Students = new ObservableCollection<Student>(MainWindow.connection.Students);
+            Classes = new ObservableCollection<Class>(MainWindow.connection.Classes);
+            bindingCb.Source = Classes;
             bindingList.Source = Students;
             cbGroup.SetBinding(ComboBox.ItemsSourceProperty, bindingCb);
             listView.SetBinding(ListView.ItemsSourceProperty, bindingList);
@@ -44,31 +45,30 @@ namespace School1
         }
         private void AddStudent(object sender, RoutedEventArgs e)
         {
-            var idStudent = int.Parse(tbIDStudent.Text.Trim());
-            var fullName = tbFullName.Text.Trim();
-            var password = tbPassword.Text.Trim();
-            var GroupID = (cbGroup.SelectedItem as SchoolLibrary.group).id;
+            var firstName = firstNameStudent.Text.Trim();
+            var lastName = lastNameStudent.Text.Trim();
+            var patronymic = patronymicStudent.Text.Trim();
+            var ClassName = (cbGroup.SelectedItem as Class).Number;
 
-            var student1 = new SchoolLibrary.student()
+            var student1 = new Student()
             {
-                id = idStudent,
-                username = fullName,
-                password = password,
-                groupId = GroupID,
+                FirstName = firstName,
+                LastName = lastName,
+                Patronymic = patronymic,
+                Class = ClassName,
 
             };
-            MainWindow.connection.students.Add(student1);
+            MainWindow.connection.Students.Add(student1);
             MainWindow.connection.SaveChanges();
-
             Students.Add(student1);
 
         }
 
         private void DeleteStudent(object sender, RoutedEventArgs e)
         {
-            var delStudent = listView.SelectedItem as student;
+            var delStudent = listView.SelectedItem as Student;
             Students.Remove(delStudent);
-            MainWindow.connection.students.Remove(delStudent);
+            MainWindow.connection.Students.Remove(delStudent);
             MainWindow.connection.SaveChanges();
 
         }

@@ -25,18 +25,20 @@
         </ListView>
         <StackPanel Grid.Column="1">
             <Button Click="Button_Click"  Background="Lavender" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20,20,20,0" Height="30" Width="100">Выйти</Button>
-            <TextBlock FontSize="16" Margin="10,0,10,0">ID студента</TextBlock>
-            <TextBox Name="tbIDStudent" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,0,10,0">Фамилия</TextBlock>
+            <TextBox Name="lastNameStudent" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
             <TextBlock FontSize="16" Margin="10,0,10,0">ФИО</TextBlock>
-            <TextBox Name="tbFullName" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBox Name="firstNameStudent" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
             <TextBlock FontSize="16" Margin="10,10,10,0">Пароль</TextBlock>
-            <TextBox Name="tbPassword" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
-            <TextBlock FontSize="16" Margin="10,10,10,0" >Группа</TextBlock>
-            <ComboBox ItemsSource="{Binding Groups}" Name="cbGroup"  Height="30" Margin="10,0,10,0" >
+            <TextBox Name="patronymicStudent" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,10,10,0" >Класс</TextBlock>
+            <ComboBox ItemsSource="{Binding Classes}" Name="cbGroup"  Height="30" Margin="10,0,10,0" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>
-                            <Run Text="{Binding name}"></Run>
+                            <Run Text="{Binding FirstName}"></Run>
+                               <Run Text="{Binding LastName}"></Run>
+                               <Run Text="{Binding Patronymic}"></Run>
                         </TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>

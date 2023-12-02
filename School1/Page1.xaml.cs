@@ -1,4 +1,4 @@
-﻿using SchoolLibrary;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,37 +23,43 @@ namespace School1
     /// </summary>
     public partial class Page1 : Page
     {
-        private readonly SchoolLibrary.TestingSystemEntities connection;
-        public ObservableCollection<SchoolLibrary.admin> Admins{ get; set; }
+        private readonly ClassLibrarySchool.user3Entities connection;
+        public ObservableCollection<ClassLibrarySchool.Account> Admins{ get; set; }
         public Page1()
         {
             InitializeComponent();
-            connection = new SchoolLibrary.TestingSystemEntities();
-            Admins = new ObservableCollection<SchoolLibrary.admin>(connection.admins);
+            connection = new ClassLibrarySchool.user3Entities();
+            Admins = new ObservableCollection<ClassLibrarySchool.Account>(connection.Accounts);
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(ID.Text == "" || FIO.Text == "" || Password.Text == "")
+            if(nickName.Text == "" || lastName.Text == "" || firstName.Text == "" || patronymic.Text == "" || password.Text == "")
             {
                 MessageBox.Show("Поля пустые");
                 return;
             }
 
-            var idadmin = int.Parse(ID.Text.Trim());
-            var fullName = FIO.Text.Trim();
-            var password = Password.Text.Trim();
+            var nickNameA  = nickName.Text.Trim();
+            var firstNameA = firstName.Text.Trim();
+            var lastNameA = lastName.Text.Trim();
+            var patronymicA = patronymic.Text.Trim();
+            var passwordA = password.Text.Trim();
 
-            var admins = new SchoolLibrary.admin()
+            var acoount = new ClassLibrarySchool.Account()
             {
-                id = idadmin,
-                userName= fullName,
-                passwordA = password,
+                NickName = nickNameA,
+                FirstName = firstNameA,
+                LastName = lastNameA,
+                Patronymic = patronymicA,
+                PasswordA = passwordA,
+                Role = 4
+
             };
-            connection.admins.Add(admins);
+            connection.Accounts.Add(acoount);
             connection.SaveChanges();
-            Admins.Add(admins);
+            Admins.Add(acoount);
 
             MainWindow.page.Navigate(Class1.mainWindow);
         }

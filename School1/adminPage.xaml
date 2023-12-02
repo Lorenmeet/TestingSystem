@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:School1"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="adminPage">
 
     <Grid Background="#FFD8BAEA">
@@ -13,48 +13,46 @@
             <ColumnDefinition Width="350*"/>
             <ColumnDefinition Width="250*"/>
         </Grid.ColumnDefinitions>
+   
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
-            <RowDefinition  Height="30"/>
-            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Grid.Row="0" >Завучи</TextBlock>
-        <ListView Grid.Column="0" Grid.Row="1" Background="#FFD8BAEA"   Name="headlists">
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Grid.Row="0" >Работники</TextBlock>
+        <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"  Background="#FFD8BAEA"   Name="headlists">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock FontSize="20">                     
-                       <Run Text="{Binding userName}"></Run>
-                       <Run Text="{Binding passwordH}"></Run>
+                    <TextBlock FontSize="20">           
+                       <Run Text="{Binding NickName}"></Run>
+                       <Run Text="{Binding FirstName}"></Run>
+                       <Run Text="{Binding LastName}"></Run>
+                       <Run Text="{Binding Patronymic}"></Run>
+                       <Run Text="{Binding PasswordA}"></Run>
                     </TextBlock>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock HorizontalAlignment="Center" FontSize="20"  Grid.Row="2" >Учителя</TextBlock>
-        <ListView Grid.Column="0" Grid.Row="3" Background="#FFD8BAEA"   Name="teachlists">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock FontSize="20">
-                       <Run Text="{Binding userName}"></Run>
-                       <Run Text="{Binding passwordT}"></Run>
-                    </TextBlock>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBlock FontSize="16" Margin="10,10,10,0">ID </TextBlock>
-            <TextBox Name="tbID" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
-            <TextBlock FontSize="16" Margin="10,0,10,0">ФИО</TextBlock>
-            <TextBox Name="tbuserName" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
-            <TextBlock FontSize="16" Margin="10,10,10,0">Пароль</TextBlock>
-            <TextBox Name="tbPassword" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
-           
+      
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <TextBlock FontSize="15" Margin="10,2,10,0">Имя аккаунта</TextBlock>
+            <TextBox Name="tbnickName" Background="#FFB7CDEA" Height="25" Margin="10,0,10,0"  />
+            <TextBlock FontSize="15" Margin="10,0,10,0">Фамилия</TextBlock>
+            <TextBox Name="tbuserLastName" Background="#FFB7CDEA" Height="25" Margin="10,0,10,0" />
+            <TextBlock FontSize="15" Margin="10,0,10,0">Имя</TextBlock>
+            <TextBox Name="tbuserFirstName" Background="#FFB7CDEA" Height="25" Margin="10,0,10,0" />
+            <TextBlock FontSize="15"  Margin="10,00,10,0">Отчество</TextBlock>
+            <TextBox Name="tbPatronymic" Background="#FFB7CDEA" Grid.Column="1" Grid.Row="2" Height="25" Margin="10,0,10,0" />
+            <TextBlock FontSize="15" Margin="10,0,10,0">Пароль</TextBlock>
+            <TextBox Name="tbuserPassword" Background="#FFB7CDEA" Height="25" Margin="10,0,10,0" />
         </StackPanel>
+        
         <StackPanel Grid.Row="3" Grid.Column="1">
-            <Button  Click="AddRoleT" Background="Lavender" Height="30" Margin="10,20,10,10" >Добавить учителя</Button>
-            <Button Click="AddRoleH" Background="Lavender" Height="30" Margin="10,20,10,10" >Добавить завуча</Button>
-            <Button Click="DeleteRole" Background="Lavender" Height="30" Margin="10,20,10,10" >Удалить запись</Button>
+           
+            <Button  Click="AddRoleT" Background="Lavender" Height="30" Margin="10,35,10,10" >Добавить учителя</Button>
+            <Button Click="AddRoleH" Background="Lavender" Height="30" Margin="10,10,10,10" >Добавить завуча</Button>
+            <Button Click="DeleteRole" Background="Lavender" Height="30" Margin="10,10,10,10" >Удалить запись</Button>
         </StackPanel>
     </Grid>
 </Page>

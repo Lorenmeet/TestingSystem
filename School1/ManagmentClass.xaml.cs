@@ -1,4 +1,5 @@
-﻿using SchoolLibrary;
+﻿using ClassLibrarySchool;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,13 +23,13 @@ namespace School1
     /// </summary>
     public partial class ManagmentClass : Page
     {
-        public ObservableCollection<group> Groups { get; set; }
+        public ObservableCollection<Class> Classes { get; set; }
         public ManagmentClass()
         {
             InitializeComponent();
             Binding classlist = new Binding();
-            Groups = new ObservableCollection<group>(MainWindow.connection.groups);
-            classlist.Source = Groups;
+            Classes = new ObservableCollection<Class>(MainWindow.connection.Classes);
+            classlist.Source = Classes;
             classlists.SetBinding(ListView.ItemsSourceProperty, classlist);
         }
 
@@ -38,24 +39,20 @@ namespace School1
         }
         private void AddClass(object sender, RoutedEventArgs e)
         {
-            var idC = int.Parse(idClass.Text.Trim());
             var nameClass = tbName.Text.Trim();
-
-
-            var Class1 = new SchoolLibrary.group()
+            var Class1 = new Class()
             {
-                id = idC,
-                name = nameClass,
+                Number = nameClass,
             };
-            MainWindow.connection.groups.Add(Class1);
+            MainWindow.connection.Classes.Add(Class1);
             MainWindow.connection.SaveChanges();
-            Groups.Add(Class1);
+            Classes.Add(Class1);
         }
         private void DeleteClass(object sender, RoutedEventArgs e)
         {  
-            var delClass = classlists.SelectedItem as group;
-            Groups.Remove(delClass);
-            MainWindow.connection.groups.Remove(delClass);
+            var delClass = classlists.SelectedItem as Class;
+            Classes.Remove(delClass);
+            MainWindow.connection.Classes.Remove(delClass);
             MainWindow.connection.SaveChanges();
 
         }

@@ -1,4 +1,5 @@
-﻿using SchoolLibrary;
+﻿using ClassLibrarySchool;
+using SchoolLibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,25 +25,17 @@ namespace School1
     /// </summary>
     public partial class adminPage : Page
     {
-        public ObservableCollection<headTeacher> HeadTeacher { get; set; }
-        public ObservableCollection<teacher> Teacher { get; set; }
+        public ObservableCollection<Account> Accounts { get; set; }
+      
        
-   
         public adminPage()
         {
             InitializeComponent();
 
             Binding headlist = new Binding();
-            HeadTeacher = new ObservableCollection<headTeacher>(MainWindow.connection.headTeachers);
-            headlist.Source = HeadTeacher;
-            headlists.SetBinding(ListView.ItemsSourceProperty, headlist);
-
-
-            Binding teachlist = new Binding();
-            Teacher= new ObservableCollection<teacher>(MainWindow.connection.teachers);
-            teachlist.Source = Teacher;
-            teachlists.SetBinding(ListView.ItemsSourceProperty, teachlist);
-            
+            Accounts = new ObservableCollection<Account>(MainWindow.connection.Accounts.Where(x => x.Role != 3 && x.Role != 4));
+            headlist.Source = Accounts;
+            headlists.SetBinding(ListView.ItemsSourceProperty, headlist);        
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -50,55 +43,61 @@ namespace School1
         }
         private void AddRoleT(object sender, RoutedEventArgs e)
         {
-            var idH = int.Parse(tbID.Text.Trim());
-            var userName = tbuserName.Text.Trim();
-            var password = tbPassword.Text.Trim();
+            var nickNameA = tbnickName.Text.Trim();
+            var firstNameA = tbuserFirstName.Text.Trim();
+            var lastNameA = tbuserLastName.Text.Trim();
+            var patronymicA = tbPatronymic.Text.Trim();
+            var passwordA = tbuserPassword.Text.Trim();
 
-            var headTeacher1 = new SchoolLibrary.headTeacher()
+            var acoount = new Account()
             {
-                id = idH,
-                userName = userName,
-                passwordH = password,
+                NickName = nickNameA,
+                FirstName = firstNameA,
+                LastName = lastNameA,
+                Patronymic = patronymicA,
+                PasswordA = passwordA,
+                Role = 2
+
             };
-            MainWindow.connection.headTeachers.Add(headTeacher1);
+            MainWindow.connection.Accounts.Add(acoount);
             MainWindow.connection.SaveChanges();
-            HeadTeacher.Add(headTeacher1);
+            Accounts.Add(acoount);
 
         }
         private void AddRoleH(object sender, RoutedEventArgs e)
         {
-            var idH = int.Parse(tbID.Text.Trim());
-            var userName = tbuserName.Text.Trim();
-            var password = tbPassword.Text.Trim();
+            var nickNameA = tbnickName.Text.Trim();
+            var firstNameA = tbuserFirstName.Text.Trim();
+            var lastNameA = tbuserLastName.Text.Trim();
+            var patronymicA = tbPatronymic.Text.Trim();
+            var passwordA = tbuserPassword.Text.Trim();
 
-            var Teacher1 = new SchoolLibrary.teacher()
+            var acoount = new Account()
             {
-                id = idH,
-                userName = userName,
-                passwordT = password,
+                NickName = nickNameA,
+                FirstName = firstNameA,
+                LastName = lastNameA,
+                Patronymic = patronymicA,
+                PasswordA = passwordA,
+                Role = 1
+
             };
-            MainWindow.connection.teachers.Add(Teacher1);
+            MainWindow.connection.Accounts.Add(acoount);
             MainWindow.connection.SaveChanges();
-            Teacher.Add(Teacher1);
+            Accounts.Add(acoount);
         }
         
         private void DeleteRole(object sender, RoutedEventArgs e)
         {
             if(headlists.SelectedItems.Count > 0) {
-                var delH = headlists.SelectedItem as headTeacher;
-                HeadTeacher.Remove(delH);
-                MainWindow.connection.headTeachers.Remove(delH);
+                var delH = headlists.SelectedItem as Account;
+                Accounts.Remove(delH);
+                MainWindow.connection.Accounts.Remove(delH);
                 MainWindow.connection.SaveChanges();
-            }
-           if(teachlists.SelectedItems.Count >0)
-            {
-                var delT = teachlists.SelectedItem as teacher;
-                Teacher.Remove(delT);
-                MainWindow.connection.teachers.Remove(delT);
-                MainWindow.connection.SaveChanges();
-            }
-           
+            }     
 
         }
+
+   
     }
 }

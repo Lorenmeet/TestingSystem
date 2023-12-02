@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7c074b8bedf41a6ba885efba5fa8b5b" Name="Diagram1">
+        <EntityTypeShape EntityType="SchoolLib.AcademicPlan" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Account" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Answer" Width="1.5" PointX="14.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.AnswerVariant" Width="1.5" PointX="16.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Class" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.ExecutionAttempt" Width="1.5" PointX="12" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Question" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.QuestionType" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.QuestionVariant" Width="1.5" PointX="16.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Role" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Student" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Subject" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.TeacherWorkload" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Test" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.TestAppointment" Width="1.5" PointX="9.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolLib.Variant" Width="1.5" PointX="14.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="SchoolLib.FK__AcademicP__Class__703EA55A" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__AcademicP__Subje__6F4A8121" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__TeacherWor__Plan__76EBA2E9" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Account__Role__689D8392" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__TeacherWo__Teach__75F77EB0" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__TestAppoi__Respo__7E8CC4B1" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Answer__Executio__0CDAE408" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Answer__Question__0DCF0841" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__AnswerVar__Answe__16644E42" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__AnswerVar__Varia__1758727B" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Student__Class__731B1205" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Execution__TestA__09FE775D" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Question__Type__035179CE" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__QuestionV__Quest__1293BD5E" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__QuestionV__Varia__1387E197" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__TestAppoi__Stude__7D98A078" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__Test__Teacher__79C80F94" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.FK__TestAppoin__Test__7CA47C3F" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolLib.TestQuestion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -21,7 +21,7 @@ namespace School1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static SchoolLibrary.TestingSystemEntities connection;
+        public static ClassLibrarySchool.user3Entities connection;
        
         public static Frame page;
 
@@ -30,7 +30,7 @@ namespace School1
            
             InitializeComponent();
             
-            connection = new SchoolLibrary.TestingSystemEntities();
+            connection = new ClassLibrarySchool.user3Entities();
             if (connection.Database.Exists() == false) { 
             MessageBox.Show("Подключение к базе данных не было выполнено. Приложение будет завершено", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 Application.Current.Shutdown();
@@ -38,7 +38,7 @@ namespace School1
            
             DataContext = this;
             page = Authorization;
-            if(connection.admins.Count() == 0) 
+            if(connection.Accounts.Where(x => x.Role == 4) == null) 
             {
                 page.Navigate(Class1.reg);
             }

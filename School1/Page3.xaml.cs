@@ -1,4 +1,5 @@
-﻿using SchoolLibrary;
+﻿using ClassLibrarySchool;
+using SchoolLibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,49 +23,46 @@ namespace School1
     /// </summary>
     public partial class Page3 : Page
     {
-        public admin _admin { get; set; }
-        public headTeacher _headTeacher { get; set; }
-        public teacher _teacher { get; set; }
-        public ObservableCollection<student> Students { get; set; }
-        public ObservableCollection<admin> Admin { get; set; }
-        public ObservableCollection<headTeacher> HeadTeacher { get; set; }
-        public ObservableCollection<teacher> Teacher { get; set; }
+        public Account _account { get; set; }
+       
+        public ObservableCollection<Account> Accounts{ get; set; }
+      
 
         public Page3()
         {
             InitializeComponent();
-            Students = new ObservableCollection<student>(MainWindow.connection.students);
-            Admin = new ObservableCollection<admin>(MainWindow.connection.admins);
-            HeadTeacher = new ObservableCollection<headTeacher>(MainWindow.connection.headTeachers);
-            Teacher = new ObservableCollection<teacher>(MainWindow.connection.teachers);
-            _headTeacher = new headTeacher();
-            _teacher= new teacher();
-            _admin = new admin();
+
+            Accounts = new ObservableCollection<Account>(MainWindow.connection.Accounts);
+            _account = new Account();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _admin.userName = FIO.Text.Trim();
-                _admin.passwordA = Password.Text.Trim();
-                if (MainWindow.connection.admins.Any(x => x.userName == _admin.userName && x.passwordA == _admin.passwordA))
+                _account.NickName = nickName.Text.Trim();
+                _account.PasswordA = Password.Text.Trim();
+                if (MainWindow.connection.Accounts.FirstOrDefault(x => x.NickName == _account.NickName && x.PasswordA == _account.PasswordA && x.Role == 4)!= null)
                 {
                     MainWindow.page.Navigate(Class1.admin);
                     return;
                 }
-                _headTeacher.userName = FIO.Text.Trim();
-                _headTeacher.passwordH = Password.Text.Trim();
-                if (MainWindow.connection.headTeachers.Any(x => x.userName == _headTeacher.userName && x.passwordH == _headTeacher.passwordH))
+
+                if (MainWindow.connection.Accounts.FirstOrDefault(x => x.NickName == _account.NickName && x.PasswordA == _account.PasswordA && x.Role == 1) != null)
                 {
                     MainWindow.page.Navigate(Class1.headTeacher);
                     return;
                 }
-                _teacher.userName = FIO.Text.Trim();
-                _teacher.passwordT = Password.Text.Trim();
-                if (MainWindow.connection.teachers.Any(x => x.userName == _teacher.userName && x.passwordT == _teacher.passwordT))
+
+                if (MainWindow.connection.Accounts.FirstOrDefault(x => x.NickName == _account.NickName && x.PasswordA == _account.PasswordA && x.Role == 2) != null)
                 {
                     MainWindow.page.Navigate(Class1.teacher);
+                    return;
+                }
+                if (MainWindow.connection.Accounts.FirstOrDefault(x => x.NickName == _account.NickName && x.PasswordA == _account.PasswordA && x.Role == 3) != null)
+                {
+                    MainWindow.page.Navigate(Class1.studentPage);
                     return;
                 }
                 throw new Exception("Не найдено");

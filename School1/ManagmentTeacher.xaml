@@ -22,22 +22,30 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock FontSize="20">
-                       <Run Text="{Binding userName}"></Run>
+                       <Run Text="{Binding NickName}"></Run>
+                       <Run Text="{Binding FirstName}"></Run>
+                       <Run Text="{Binding LastName}"></Run>
+                       <Run Text="{Binding Patronymic}"></Run>
+                       <Run Text="{Binding Password}"></Run>
                     </TextBlock>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBlock FontSize="16" Margin="10,10,10,0">ID</TextBlock>
-            <TextBox Name="idTeaher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,10,10,0">Имя аккаунта</TextBlock>
+            <TextBox Name="nickNameteacher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,0,10,0">Фамилия</TextBlock>
+            <TextBox Name="lastNameTeacher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
             <TextBlock FontSize="16" Margin="10,0,10,0">Имя</TextBlock>
-            <TextBox Name="tbName" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBox Name="firstNameTeacher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBlock FontSize="16" Margin="10,0,10,0">Отчество</TextBlock>
+            <TextBox Name="patronymicTeacher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
             <TextBlock FontSize="16" Margin="10,0,10,0">Пароль</TextBlock>
-            <TextBox Name="tbPassword" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
+            <TextBox Name="passwordTeacher" Background="#FFB7CDEA" Height="30" Margin="10,0,10,0" />
 
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="1">
-            <Button  Click="AddTeacher" Background="Lavender" Height="30" Margin="10,200,10,10" >Добавить учителя</Button>
+            <Button  Click="AddTeacher" Background="Lavender" Height="30" Margin="10,300,10,10" >Добавить учителя</Button>
             <Button Click="DeleteTeacher" Background="Lavender" Height="30" Margin="10,10,10,10" >Удалить учителя</Button>
         </StackPanel>
         <Button Click="Button_Click"  Background="Lavender" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="30" Width="100">Выйти</Button>

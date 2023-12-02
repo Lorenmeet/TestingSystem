@@ -1,4 +1,5 @@
-﻿using SchoolLibrary;
+﻿using ClassLibrarySchool;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,13 +24,13 @@ namespace School1
     /// </summary>
     public partial class ManagmentSubject : Page
     {
-        public ObservableCollection<subject> Subject { get; set; }
+        public ObservableCollection<Subject> Subjects { get; set; }
         public ManagmentSubject()
         {
             InitializeComponent();
             Binding subgectLists = new Binding();
-            Subject = new ObservableCollection<subject>(MainWindow.connection.subjects);
-            subgectLists.Source = Subject;
+            Subjects = new ObservableCollection<Subject>(MainWindow.connection.Subjects);
+            subgectLists.Source = Subjects;
             subjectList.SetBinding(ListView.ItemsSourceProperty, subgectLists);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,24 +39,23 @@ namespace School1
         }
         private void AddSubject(object sender, RoutedEventArgs e)
         {
-            var idS = int.Parse(idSubject.Text.Trim());
+        
             var nameS = tbsSubject.Text.Trim();
          
-            var subject = new SchoolLibrary.subject()
+            var subject = new Subject()
             {
-                id = idS,
-                nameS = nameS,
+                Name = nameS,
                
             };
-            MainWindow.connection.subjects.Add(subject);
+            MainWindow.connection.Subjects.Add(subject);
             MainWindow.connection.SaveChanges();
-            Subject.Add(subject);
+            Subjects.Add(subject);
         }
         private void DeleteSubject(object sender, RoutedEventArgs e)
         {
-            var delSubject = subjectList.SelectedItem as subject;
-            Subject.Remove(delSubject);
-            MainWindow.connection.subjects.Remove(delSubject);
+            var delSubject = subjectList.SelectedItem as Subject;
+            Subjects.Remove(delSubject);
+            MainWindow.connection.Subjects.Remove(delSubject);
             MainWindow.connection.SaveChanges();
 
         }

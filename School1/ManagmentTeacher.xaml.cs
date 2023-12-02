@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrarySchool;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -14,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SchoolLibrary;
+
 
 namespace School1
 {
@@ -23,13 +24,13 @@ namespace School1
     /// </summary>
     public partial class ManagmentTeacher : Page
     {
-        public ObservableCollection<teacher> Teachers { get; set; }
+        public ObservableCollection<Account> Accounts { get; set; }
         public ManagmentTeacher()
         {
             InitializeComponent();
             Binding teacherLists = new Binding();
-            Teachers = new ObservableCollection<teacher>(MainWindow.connection.teachers);
-            teacherLists.Source = Teachers;
+            Accounts = new ObservableCollection<Account>(MainWindow.connection.Accounts);
+            teacherLists.Source = Accounts;
             teacherList.SetBinding(ListView.ItemsSourceProperty, teacherLists);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,24 +39,32 @@ namespace School1
         }
         private void AddTeacher(object sender, RoutedEventArgs e)
         {
-            var idT = int.Parse(idTeaher.Text.Trim());
-            var nameT = tbName.Text.Trim();
-            var PasswordT = tbPassword.Text.Trim();
-            var Teacher = new SchoolLibrary.teacher()
-        {
-            id = idT,
-            userName = nameT,
-            passwordT= PasswordT,
-        };
-        MainWindow.connection.teachers.Add(Teacher);
+
+            var nickNameA = nickNameteacher.Text.Trim();
+            var firstNameA = firstNameTeacher.Text.Trim();
+            var lastNameA = lastNameTeacher.Text.Trim();
+            var patronymicA = patronymicTeacher.Text.Trim();
+            var passwordA = passwordTeacher.Text.Trim();
+
+            var acoount = new Account()
+            {
+                NickName = nickNameA,
+                FirstName = firstNameA,
+                LastName = lastNameA,
+                Patronymic = patronymicA,
+                PasswordA = passwordA,
+                Role = 2
+
+            };
+            MainWindow.connection.Accounts.Add(acoount);
             MainWindow.connection.SaveChanges();
-            Teachers.Add(Teacher);
+            Accounts.Add(acoount);
         }
     private void DeleteTeacher(object sender, RoutedEventArgs e)
     {
-        var delTeacher = teacherList.SelectedItem as teacher;
-        Teachers.Remove(delTeacher);
-        MainWindow.connection.teachers.Remove(delTeacher);
+        var delTeacher = teacherList.SelectedItem as Account;
+        Accounts.Remove(delTeacher);
+        MainWindow.connection.Accounts.Remove(delTeacher);
         MainWindow.connection.SaveChanges();
 
     }

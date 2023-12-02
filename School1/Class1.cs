@@ -13,8 +13,8 @@ namespace School1
         public static Page1 reg
         {
             get
-            { 
-                if(_reg == null)
+            {
+                if (_reg == null)
                 {
                     _reg = new Page1();
                 }
@@ -26,8 +26,8 @@ namespace School1
         {
             get
             {
-              _autho = new Page3();
-               return _autho;
+                _autho = new Page3();
+                return _autho;
             }
         }
         public static ManagmentTeacher _managmentTeacher;
@@ -74,7 +74,7 @@ namespace School1
         {
             get
             {
-                _mainWindow= new Page2();
+                _mainWindow = new Page2();
                 return _mainWindow;
             }
         }
@@ -84,14 +84,14 @@ namespace School1
         {
             get
             {
-                _admin= new adminPage();
+                _admin = new adminPage();
                 return _admin;
             }
         }
         private static HeadTeacher _headTeacher;
         public static HeadTeacher headTeacher
         {
-            get 
+            get
             {
                 _headTeacher = new HeadTeacher();
                 return _headTeacher;
@@ -104,6 +104,15 @@ namespace School1
             {
                 _teacher = new Teacher();
                 return _teacher;
+            }
+        }
+        private static StudentPage _student;
+        public static StudentPage studentPage
+        {
+            get
+            {
+                _student = new StudentPage();
+                return _student;
             }
         }
 
